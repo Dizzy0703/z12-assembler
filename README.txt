@@ -100,7 +100,3 @@ JUMP 54         # Jump forward 54 instructions
 BEQF r0 r1 13   # Branch forward 13 instructions if r0 is equal to r1
 BEQB r0 r1 13   # Branch backward 13 instructions if r0 is equal to r1
 BLB r0 r1 13    # Branch backward 13 instructions if r0 is less than r1
-
-NOTICE: THESE FILES ARE DISTRIBUTED WITHOUT ANY LICENSE.
-You are free to copy, modify, and distribute these files, but source code is
-withheld until a license is suggested and applied.
