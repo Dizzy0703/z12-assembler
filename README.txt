@@ -12,8 +12,9 @@ with transistor-level standards. The reader may, if so inclined, attempt to
 resolve these issues as an exercise.
 
 The Z12 processor has 12-bit wide instruction words, works with 12-bit wide registers
-and can directly access 4096 12-bit memory words. There are three types of
-instructions, Register-type, Immediate-type, and Jump-type:
+and can directly access 4096 12-bit memory words. It should be kept in mind that 
+the bottom-most address, 0x0000, is a memory-mapped output port to a TTY (see .circ file).
+There are three types of instructions, Register-type, Immediate-type, and Jump-type:
 
 	- Register-type instructions are layed out as:
 
@@ -54,12 +55,10 @@ The files included with this readme are:
 	- The Z12 Logisim .circ file;
 	- The Z12 Assembler program (written in C# and compiled with Roslyn - 
 	  which should run on recent Windows installations);
-	- A testing file (Z12_STRLITERAL) which loads a character array into memory
-	  and serves as an example;
+	- An example file (Z12_STRLITERAL) which loads a character array into memory
+	  and prints it to the TTY;
 	- An output.txt file containing the result of assembling the Z12_STRLITERAL
-	  file, and which shows Logisim ROM/RAM file format;
-	- A batch file that will bring up a command prompt in the
-	  working directory.
+	  file, and which shows Logisim ROM/RAM file format.
 
 To use the assembler, navigate to whichever directory it is stored in with
 a command prompt instance and type:

@@ -34,5 +34,21 @@ ADD r0 r0 r0  # Shift left r0 (30).
 ADDI r0 r0 3  # Add 3 to r0 (33) ASCII "!".
 SW r0 r3 5    # "!" in 0x000D.
 SUB r0 r0 r0  # Flush r0.
-ADD r0 r0 r0
-JUMP -1       # Jump back one instruction (end - loop NOPs until interuppted).
+ADDI r0 r0 10 # "\n" in r0
+SW r0 r3 6    # String terminated with newline.
+LW r0 r3 0    # "H" in r0
+SW r0 r1 0    # "H" to TTY
+LW r0 r3 1    # "E" in r0
+SW r0 r1 0    # "E" to TTY
+LW r0 r3 2    # "L" in r0
+SW r0 r1 0    # "L" to TTY
+LW r0 r3 3    # "L" in r0
+SW r0 r1 0    # "L" to TTY
+LW r0 r3 4    # "O" in r0
+SW r0 r1 0    # "O" to TTY
+LW r0 r3 5    # "!" in r0
+SW r0 r1 0    # "!" to TTY
+LW r0 r3 6    # "\n" in r0
+SW r0 r1 0    # "\n" to TTY
+SUB r0 r0 r0  # Flush r0.
+JUMP -15      # Jump back to start of string writing (print endlessly until interrupted).
